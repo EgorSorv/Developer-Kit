@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 
 public class FileHandler {
 
-    public final String fileLogs = "src/main/java/hw1/server/log.txt";
+    public final String fileLogs = "src/main/java/hw2/repository/log.txt";
 
     public void saveInfoInRepo(String text) {
         try (FileWriter writer = new FileWriter(fileLogs, true)) {
