@@ -1,6 +1,7 @@
-package hw2.server;
+package hw2;
 
 import hw2.client.ClientGUI;
+import hw2.server.ServerWindow;
 
 public class Main {
     public static void main(String[] args) {
