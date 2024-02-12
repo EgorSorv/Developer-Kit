@@ -34,7 +34,7 @@ public class ClientGUI extends JFrame implements ClientView {
         setTitle("Chat client");
         setLocationRelativeTo(this);
         setDefaultCloseOperation(HIDE_ON_CLOSE);
-        client = new Client(this, server.getConnection);
+        client = new Client(this, server.server);
     }
 
     public void appendLog(String text) {
@@ -49,12 +49,8 @@ public class ClientGUI extends JFrame implements ClientView {
     public void hidePanelTop(boolean visible) {
         panelTop.setVisible(visible);
     }
-    public void connection() {
-        if (client.connectionWithServer(tfLogin.getText()))
-            panelTop.setVisible(false);
-    }
 
-    public void login() {
+    public void connection() {
         if (client.connectionWithServer(tfLogin.getText()))
             panelTop.setVisible(false);
     }
@@ -78,7 +74,7 @@ public class ClientGUI extends JFrame implements ClientView {
         tfPassword = new JPasswordField("123456");
 
         btnLogin = new JButton("login");
-        btnLogin.addActionListener(e -> login());
+        btnLogin.addActionListener(e -> connection());
 
         panelTop.add(tfIPAddress);
         panelTop.add(tfPort);
