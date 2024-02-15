@@ -1,8 +1,10 @@
 package hw2.client;
 
+import hw2.server.Server;
+
 public class Client {
-    private ClientView clientView;
-    private Server server;
+    private final ClientView clientView;
+    private final Server server;
     private boolean logIn;
     private String name;
 
@@ -16,7 +18,6 @@ public class Client {
 
         if (server.connectUser(this)) {
             showMessage("You have successfully connected\n");
-            panelTop.setVisible(false);
             logIn = true;
             String log = server.getLog();
 
